@@ -28,7 +28,7 @@
           size="18"
           stroke-width="2"
           class="icon-hide-style"
-          :class="isFloating && 'active'"
+          :class="isBoxHidden && 'active'"
         />
       </header>
       <div
@@ -47,7 +47,7 @@
           :style="boxStyle"
           @mousedown="startDrag"
         >
-          <Shrink @click.stop="toggleFloating" class="icon-shrink" />
+          <Shrink @click.stop="toggleFloating" class="icon-shrink" :class="isFloating && 'active'"/>
           <div class="content-box">
             <h3>Section 1</h3>
           </div>
@@ -250,6 +250,10 @@ header {
 }
 
 .icon-shrink:hover {
+  color: #0881fc;
+}
+
+.icon-shrink.active {
   color: #0881fc;
 }
 
